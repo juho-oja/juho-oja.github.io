@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64">
+	<defs>
+		<linearGradient id="transdown" x1="0%" y1="100%" x2="0%" y2="0%">
+			<stop offset="0%" stop-color="#fe4" stop-opacity="0.33" />
+			<stop offset="50%" stop-color="#fe4" stop-opacity="0.67"/>
+			<stop offset="100%" stop-color="#fe4" stop-opacity="1.0"/>
+		</linearGradient>
+	</defs>
+
+	<style type="text/css" >
+		path.bar { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+	</style>
+
+	<g transform="scale(0.5)">
+		<path class="bar" style="stroke: #000; stroke-width: 6px; fill: url(#transdown);" fill="url(#gright)" d="M32,120 L63,3 L96,120 L32,120" />
+	</g>
+</svg>

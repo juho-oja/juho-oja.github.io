@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128">
+	<defs>
+		<linearGradient id="greyshift" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#afe" />
+			<stop offset="100%" stop-color="#fff" />
+		</linearGradient>
+	</defs>
+
+	<style type="text/css" >
+		.bar { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+	</style>
+
+<g id="shadow" transform="scale(0.9) translate(8,8)">
+	<circle class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 22px;" cx="64" cy="64" r="50" />
+	<path class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 22px" d="M40,64 L88,64 M64,40 L64,88" />
+</g>
+
+<g transform="scale(0.9) translate(0,0)">
+	<circle class="bar" style="stroke: #000; stroke-width: 22px;" cx="64" cy="64" r="50" />
+	<circle class="bar" style="stroke: url(#greyshift); stroke-width: 11px;" cx="64" cy="64" r="50" />
+	<path class="bar" style="stroke: #000; stroke-width: 22px" d="M40,64 L88,64 M64,40 L64,88" />
+	<path class="bar" style="stroke: url(#greyshift); stroke-width: 11px" d="M40,64 L88,64 M64,40 L64,88" />
+</g>
+</svg>

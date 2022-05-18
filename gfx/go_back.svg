@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
+
+	<style type="text/css" >
+		.bar { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+	</style>
+
+<g id="shadow" transform="scale(0.9) translate(4,4)">
+	<path class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 12px" d="M8,8 H92 V92 H8 Z" />
+	<path class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 15px" d="M80,50 L20,50 L40,30 M20,50 L40,70"/>
+</g>
+
+<g transform="scale(0.9) translate(0,0)">
+	<path class="bar" style="stroke: #000; stroke-width: 12px" d="M8,8 H92 V92 H8 Z" />
+	<path class="bar" style="stroke: #eee; stroke-width: 6px" d="M8,8 H92 V92 H8 Z" />
+	<path class="bar" style="stroke: #000; stroke-width: 15px" d="M76,50 L24,50 L44,33 M24,50 L44,67" />
+	<path class="bar" style="stroke: #eee; stroke-width: 7px" d="M76,50 L24,50 L44,33 M24,50 L44,67" />
+</g>
+
+</svg>

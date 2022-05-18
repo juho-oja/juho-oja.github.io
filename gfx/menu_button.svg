@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128">
+
+	<style type="text/css" >
+		path.bar { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+	</style>
+<g transform="scale(0.9) translate(8,8)">
+	<path class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 20px" d="M8,8 L120,8 L120,120 L8,120 L8,8" />
+	<path class="bar" style="stroke: rgba(0,0,0,0.30); stroke-width: 23px" d="M32,64 L32,64 M64,64 L64,64 M96,64 L96,64" />
+</g>
+
+<g transform="scale(0.9) translate(2,2)">
+	<path class="bar" style="stroke: #000; stroke-width: 19px" d="M8,8 L120,8 L120,120 L8,120 L8,8" />
+	<path class="bar" style="stroke: #eee; stroke-width: 10px" d="M8,8 L120,8 L120,120 L8,120 L8,8" />
+	<path class="bar" style="stroke: #000; stroke-width: 25px" d="M32,64 L32,64 M64,64 L64,64 M96,64 L96,64" />
+	<path class="bar" style="stroke: #eee; stroke-width: 18px" d="M32,64 L32,64 M64,64 L64,64 M96,64 L96,64" />
+</g>
+
+</svg>

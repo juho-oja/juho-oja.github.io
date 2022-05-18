@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80">
+
+	<defs>
+		<linearGradient id="gright" x1="50%" y1="0%" x2="0%" y2="100%">
+			<stop offset="0%" stop-color="#8f6" stop-opacity="0.5" />
+			<stop offset="67%" stop-color="#af8" stop-opacity="0.8"/>
+			<stop offset="100%" stop-color="#af8" stop-opacity="1.0"/>
+		</linearGradient>
+		<linearGradient id="gleft" x1="0%" y1="0%" x2="50%" y2="100%">
+			<stop offset="0%" stop-color="#250" stop-opacity="0.5" />
+			<stop offset="67%" stop-color="#3a1" stop-opacity="0.8"/>
+			<stop offset="100%" stop-color="#3a1" stop-opacity="1.0"/>
+		</linearGradient>
+	</defs>
+	<style type="text/css" >
+		path.bar { stroke-linecap: round; stroke-linejoin: round; }
+		.light { stop-color: #bff; }
+		.dark { stop-color: #188; }
+	</style>
+<!--
+	<path class="bar" style="stroke: #000; fill: #290; stroke-width: 1px" d="M32,32 L63,126 L63,0 L32,32" />
+	<path class="bar" style="stroke: #000; fill: #7f5; stroke-width: 1px" d="M94,32 L63,126 L63,0 L94,32" />
+	<path class="bar" style="stroke: #000; fill: rgba(196, 255, 255, 0.80); stroke-width: 1.5px" d="M94,32 L63,126 L63,0 L94,32" />
+-->
+<g transform="scale(0.63)">
+	<path class="bar" style="stroke: #000; stroke-width: 2px" fill="url(#gleft)" d="M32,32 L63,126 L63,0 L32,32" />
+	<path class="bar" style="stroke: #000; stroke-width: 2px" fill="url(#gright)" d="M94,32 L63,126 L63,0 L94,32" />
+</g>
+</svg>

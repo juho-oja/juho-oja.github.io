@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128">
+
+	<style type="text/css" >
+		path.bar { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+	</style>
+
+	<path class="bar" style="stroke: #000; stroke-width: 16px" d="M8,8 L120,8 L120,120 L8,120 L8,8" />
+	<path class="bar" style="stroke: #000; stroke-width: 16px" d="M40,40 L88,88 M40,88 L88,40" />
+</svg>

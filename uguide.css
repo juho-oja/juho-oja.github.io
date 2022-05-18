@@ -1,0 +1,193 @@
+:root {
+	--margver: 5mm;
+	--marghor: 15mm;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	position: static;
+}
+
+.center {
+	text-align: center;
+}
+
+@media print { /* START OF MEDIA */
+
+	.titlepage {
+		page-break-after: always;
+		overflow: hidden;
+		font-family: sans-serif;
+	}
+	.titlebg {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	.textcontainer {
+		border: outset;
+		border-width: 0.2rem;
+		background-color: #fff;
+		position: absolute;
+		top: 35%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 50%;
+		height: 15%;
+		text-align: center;
+	}
+	.bigtitle {
+		display: block;
+		margin-top: 8mm;
+		margin-left: 10mm;
+		font-size: 2.0rem;
+	}
+	.uguidetext {
+		margin-top: 15mm;
+		line-height: 0;
+		font-size: 1.5rem;
+	}
+
+.pb {
+	page-break-before: always;
+	position: relative;
+	top: calc(var(--margver) * 2.5);
+}
+
+p, h1, h2, h3, .pimg {
+	margin: var(--margver) var(--marghor);
+}
+
+h2 {
+	margin-top: 10mm;
+}
+
+p.contents {
+	line-height: 2.5em;
+	margin: 8mm 15mm;
+}
+
+a.contents {
+	color: #000;
+	text-decoration: none;
+	font-size: 1.3em;
+}
+
+table {
+	margin: 7mm 10mm;
+}
+
+table.loctable {
+	margin-top: 0mm;
+	margin-bottom: 0mm;
+	margin-left: var(--marghor);
+}
+
+td {
+	height: 12mm;
+	min-width: 30mm;
+}
+
+.lsymbol {
+	height: 12mm;
+}
+
+.mlsymbol {
+	height: 10mm;
+}
+
+.mwaypoint {
+	height: 5mm;
+}
+
+.mzoom {
+	height: 7mm;
+}
+
+.barimg {
+	margin-left: var(--marghor);
+	max-width: calc(100vw - 30mm);
+}
+
+td.loc {
+	height: 2.0rem;
+	min-width: 4.0rem;
+	text-align: center;
+}
+
+} /* END OF PRINT */
+
+@media screen {
+
+	.titlebg {
+		display: none;
+	}
+	.uguidetext {
+		line-height: 1.0rem;
+		font-size: 1.2rem;
+	}
+
+body {
+	background-image: linear-gradient(160deg, #dff, #ffb, #ffb);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+p, h1, h2, h3 {
+	max-width: 40rem;
+	margin: 1.5rem;
+	line-height: 1.5em;
+}
+
+a.contents {
+	width: auto;
+	color: #008;
+	text-decoration: none;
+}
+
+table {
+	margin: 0.5rem;
+}
+
+.pimg {
+	margin-left: 1.5rem;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+td {
+	height: 4.0rem;
+	min-width: 6.0rem;
+}
+
+.lsymbol {
+	height: 4.0rem;
+}
+
+.mlsymbol {
+	height: 3.0rem;
+}
+
+.mwaypoint {
+	height: 1.5rem;
+}
+
+.mzoom {
+	height: 2.0rem;
+}
+
+.barimg {
+	margin-left: 1.5rem;
+	max-width: calc(100vw - 3.0rem);
+}
+
+td.loc {
+	height: 2.0rem;
+	min-width: 4.0rem;
+	text-align: center;
+}
+
+} /* END OF SCREEN*/

@@ -1,0 +1,234 @@
+@media screen and (max-width:40rem) {
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #fff;
+	font-family: sans-serif;
+}
+
+.topnav {
+	font-family: sans-serif;
+	overflow: hidden;
+	background-color: #fff;
+	height: 1.7rem;
+}
+
+.topnav span {
+	position: absolute;
+	color: #000;
+	text-align: center;
+	padding: 0;
+	margin-top: 0.2rem;
+	text-decoration: none;
+}
+
+span.left{
+	left: 1vw;
+}
+
+span.mid{
+	left: 33vw;
+}
+
+span.right{
+	left: 65vw;
+}
+
+canvas {
+	box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.8);
+}
+
+.navblock {
+	width: 33%;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	color: #fff;
+	transition: opacity 300ms;
+}
+
+svg {
+	width: 100%;
+}
+
+div {
+	margin: 0;
+	padding: 0;
+}
+
+p, h3 {
+	margin: 1rem;
+	padding: 0;
+}
+
+h3 {
+	font-size: 1.1rem;
+}
+
+iframe {
+	margin: 0;
+	padding: 0;
+	border:0px;
+}
+
+img {
+	max-width: 100%;
+}
+
+input[type="button"] {
+	margin: 0.3rem 0.2rem;
+	min-width: 20vw;
+	height: 2.2rem;
+	display: inline;
+	border-style: outset;
+/*	background-image: url("gfx/button_bkg.jpg");
+	background-position: right bottom;
+	background-size: cover;*/
+}
+
+.bottom {
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 2.8rem;
+}
+
+.topmenu_button {
+	margin: 0;
+	position: absolute;
+	width: 10vw;
+	height: 10vw;
+	top: 0;
+	right: 0;
+}
+
+.menyy{
+	margin: 0;
+	position: fixed;
+	width: auto;
+	height: auto;
+	background-color: #fff;
+	border: 1px solid #000;
+	border-radius: 0.5rem;
+	line-height: 2.0rem;
+}
+
+.menyylinks {
+	margin: 1.0rem 0rem;
+}
+
+.topmenu {
+	top: 0;
+	left: 0;
+}
+
+.dropmenu {
+	right: 0;
+	top: 10vw;
+	width: auto;
+	height: auto;
+}
+
+.menyylinks > a {
+	margin-left: 1.0rem;
+	margin-right: 1.0rem;
+	margin-top: 2.0rem;
+	text-decoration: none;
+	color: #000;
+}
+
+.menyy > a:hover {
+	background-color: #8fc;
+}
+
+.menyy > hr {
+	margin: 0 1.0rem;
+	padding: 0;
+}
+
+.topnav, .bottom {
+	box-shadow: 0 0 1.5vw 0 rgba(0, 0, 0, 0.4);
+}
+
+.leftb {
+	position: absolute;
+	left: 0vw;
+}
+
+.rightb {
+	position: absolute;
+	left: 69vw;
+}
+
+.longrb {
+	position: absolute;
+	left: 38vw;
+}
+
+.midb {
+	position: absolute;
+	left: 38vw;
+}
+
+.midlb {
+	position: absolute;
+	left: 23vw;
+}
+
+.midrb {
+	position: absolute;
+	left: 46vw;
+}
+
+.hidden {
+	display: none;
+}
+
+table {
+	font-family: sans-serif;
+}
+td {
+	padding-top: 0.5em;
+}
+
+.blinkmf {
+	animation: blinkbg 1.5s infinite;
+	background-color: #fc8;
+	font-weight: bold;
+}
+
+@keyframes blinkbg {
+	0%		{ color: #000; }
+	50%		{ color: #f00; }
+	51%		{ color: #000; }
+}
+
+.invaliderror {
+	max-width: 45%;
+	background-color: #fa8;
+	top: 0;
+	right: 0;
+}
+.gpsbox {
+	background-color: #ff8;
+	top: 0;
+	right: 0;
+}
+
+.invaliderror > p, .gpsbox > p {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	margin: 0.3em 0.8em;
+}

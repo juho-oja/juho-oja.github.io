@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="uguide.css" />
+	<title>User Guide - Expedition Oulu</title>
+</head>
+<body>
+
+<!-- TITLE PAGE -->
+
+<div class="titlepage" width="100%" height="100%">
+	<img class="titlebg" src="gfx/a4.svg" style="width:100%;" alt="background" />
+	<img class="titlebg" src="gfx/location_yellow.svg" style="width:100%; transform: translate(0,10%)" alt="background" />
+<!--	<img class="titlebg" src="gfx/location_bonus.svg" style="height:60%; transform: translate(30%,50%); overflow: hidden;" alt="background" />-->
+	<div class="textcontainer">
+		<h1 class="bigtitle">Expedition Oulu</h1>
+		<p class="uguidetext">User Guide for v.1.0</span>
+	</div>
+</div>
+
+<!-- FIRST PAGE -->
+<div class="pb"> <!-- PAGE BREAK HERE -->
+<h2>Contents</h2>
+
+<p class="contents">
+<a class="contents" href="#dapplication">1. The Application</a><br>
+<a class="contents" href="#mapview">2. Map View</a><br>
+<a class="contents" href="#locview">3. Location Details</a><br>
+<a class="contents" href="#guidedtour">4. Guided Tour</a><br>
+<a class="contents" href="#navigationf">5. Navigation Features (GPS)</a><br>
+</p>
+
+<h2 id="dapplication">1. The Application</h2>
+
+<p>
+This application showcases different points of interest around the city center
+of Oulu. It features a fully interactive map which can display user position
+if device location services are enabled.
+</p>
+<p>
+Navigation features for the guided tour are fully functional but application
+content is still very much in early access.
+</p>
+
+<h2 id="mapview">2. Map view</h2>
+
+<p>
+Map can be scrolled with the thumb on a mobile device, or with scrollbars and mouse wheel inside a
+browser window. Interactive map elements open a context menu at the top left
+of the window and they are as follows:
+</p>
+
+<table id="maptable">
+	<tr>
+		<td class="center"><img class="lsymbol" src="gfx/location_yellow.svg" alt="location symbol" /></td>
+		<td>Major location with detailed description</td>
+	</tr>
+	<tr>
+		<td class="center"><img class="mlsymbol" src="gfx/location_bonus.svg" alt="sight symbol" /></td>
+		<td>Other point of interest</td>
+	</tr>
+	<tr>
+		<td class="center"><img class="mwaypoint" src="gfx/waypoint.svg" alt="waypoint symbol" /></td>
+		<td>Waypoint on the guided tour path</td>
+	</tr>
+	<tr>
+		<td class="center"><img class="mzoom" src="gfx/user_arrow.svg" alt="waypoint symbol" /></td>
+		<td>User location (upper tip of the triangle)</td>
+	</tr>
+	<tr>
+		<td class="center">
+			<img class="mzoom" src="gfx/zoom_in.svg" alt="zoom in symbol" />
+			<img class="mzoom" src="gfx/zoom_out.svg" alt="zoom out symbol" />
+		</td>
+		<td>Zoom in/out buttons</td>
+	</tr>
+</table>
+
+<p>
+User location on the map is updated every 4 seconds. Location and user arrow tips touch when user is at the waypoint.
+</p>
+
+</div>
+
+<div class="pb">
+<h2 id="locview">3. Location Details</h2>
+
+<table class="loctable">
+	<tr>
+		<td class="loc"><img class="mzoom" src="gfx/go_back.svg" alt="location symbol" /></td>
+		<td>Return to map or tour</td>
+	</tr>
+	<tr>
+		<td class="loc"><img class="mzoom" src="gfx/menu_button.svg" alt="location symbol" /></td>
+		<td>Location context menu</td>
+	</tr>
+</table>
+
+<h2 id="guidedtour">4. Guided Tour</h2>
+
+<p>
+Guided tour takes the user along a chain of waypoints. It is possible
+to start the tour at any point of the route. If you're far away from the city,
+you can get directions via Google Maps which can be launched from the context
+menu of any map object.
+</p>
+
+<img class="barimg" src="uguide/navbar.png" />
+
+<p>
+Navigation bar displays bearing and distance to selected waypoint, as well as
+user heading.
+</p>
+
+<img class="barimg" src="uguide/guided_bottom.png" />
+
+<p>
+Left and right arrows select the next waypoint in the chain. It is feasible to
+follow the route in either direction. If waypoint is located at one of the
+major locations, the red "Read More" button will appear.
+</p>
+
+<h2 id="navigationf">5. Navigation Features (GPS)</h2>
+
+<p>
+The application is able to make use of device location if enabled and permissions are granted.
+User position is only handled locally and not stored or sent over the network at any point.
+</p>
+
+<img class="barimg" src="uguide/gpsinfo1.png" />
+<p>
+You should see this notification flash at least momentarily. It indicates that location
+permission has been granted.
+</p>
+
+<p>
+The application waits for up to 3 minutes to acquire location and throws an
+error if it is exceeded. This is not necessarily a cause for concern, as it may
+take somewhat longer for the device to find the satellites. It is a good idea
+to activate device location about 5 minutes before loading the application.
+You can always refresh the page to attempt for another 3 minutes.
+</p>
+
+<img class="barimg" src="uguide/loc_error2.png" />
+
+<div class="pb">
+<h3>Other Location Errors</h3>
+<img class="barimg" src="uguide/loc_error1.png" />
+<p>
+If you see this notification, device location is likely turned off or
+application has not been granted permission. If you want to use the GPS
+features, verify that device location is turned on. Also, make sure that the
+browser has access to user location, and you may need to give permission to the
+application individually as well.
+</p>
+
+<img class="barimg" src="uguide/loc_error3.png" />
+<p>
+This message indicates a generic error for unknown reasons.
+</p>
+
+<img class="barimg" src="uguide/loc_error4.png" />
+<p>
+If you manage to ever see this message, you're probably inside a tunnel or
+there's something wrong with the satellites.
+</p>
+
+</div>
+
+</body>
+</html>

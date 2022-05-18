@@ -1,0 +1,15 @@
+{
+  "name": "Expedition Oulu Web App",
+  "short_name": "Expedition Oulu",
+  "description": "Discover important places in Oulu and take a guided tour through the city.",
+  "icons": [
+    {
+      "src": "gfx/location_yellow.svg",
+      "sizes": "127x127"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "theme_color": "#112241",
+  "background_color": "#112241"
+}

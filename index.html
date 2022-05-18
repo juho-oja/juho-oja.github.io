@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="phone.css" />
+	<link rel="manifest" href="expeditionoulu.webmanifest"/>
+	<script src="core.js" type="text/javascript" charset="utf-8"></script>
+	<title>Expedition Oulu</title>
+</head>
+
+<body>
+
+<div id="hbriefing" style="display: none" style="height:100%">
+	<div id="hidden_img" style="display: none;">
+		<img id="appmap_nw" src="content/img/intromap_route.png" width="1520" height="1520" />
+	<!--	<img id="appmap_ne" src="content/img/map_ne2.png" width="1000" height="1000" />
+		<img id="appmap_sw" src="content/img/map_sw2.png" width="1000" height="1000" />
+		<img id="appmap_se" src="content/img/map_se2.png" width="1000" height="1000" /> -->
+		<img id="location_arrow" src="gfx/location_yellow.svg" width="127" height="127" />
+		<img id="location_bonus" src="gfx/location_bonus.svg" width="96" height="96" />
+		<img id="waypoint_dot" src="gfx/waypoint.svg" width="32" height="32" />
+		<img id="user_arrow" src="gfx/user_arrow.svg" width="64" height="64" />
+	</div>
+	
+	<div id="canvasholder" style="width: 100%; height: calc(100vh - 2.9rem); overflow:scroll">
+		<canvas id="drawarea" width="1520" height="1520" style="width:200vw; position: relative;"></canvas>
+	</div>
+
+	<div id="gpsinfobox" class="gpsbox menyy" style="display: none">
+		<p>
+			<span id="gpsinfotext">Waiting for location...</span>
+			<a id="gpsinfoclose" href="#" style="display: none;">
+				<img src="gfx/close.svg" style="height: 1.0em;" onclick="gpsinfobox.style.display='none';"/>
+			</a>
+		</p>
+	</div>
+
+	<div id="maperror" class="invaliderror menyy" style="display: none;">
+	<p>
+		<p id="brieferrortext" style="margin-right: 2.0em"></p>
+		<a href="#" style="position: absolute; top: 0; right: 0.3em;" onclick="maperror.style.display = 'none';">
+			<img src="gfx/close.svg" style="height: 1.0em">
+		</a> 
+	</p>
+	</div>
+
+	<div id="popup_menu" class="menyy topmenu" style="display:none;">
+		<h3 id="popup_title">Sample Text</h3>
+		<hr>
+		<div id="popup_links" class="menyylinks">
+			<a id="popup_read" onclick="activateLocation(0, 0)" href="#">Read More...<br></a>
+			<a id="popup_guided" onclick="activateLocation(0, 0)" href="#">Start Guided Tour Here...<br></a>
+			<a id="popup_google" target="_blank" href="#">Launch in Google Maps...</a>
+		</div>
+	</div>
+
+	<a class="zoombutton_a" href="#" onclick="zoomin();" style="position: fixed; bottom: 35vw; right: 3%;">
+		<img class="zoomin" src="gfx/zoom_in.svg" style="width: 10vw"/>
+	</a>
+	<a class="zoombutton_a" href="#" onclick="zoomout();" style="position: fixed; bottom: 17vw; right: 3%;">
+		<img class="zoomout" src="gfx/zoom_out.svg" style="width: 10vw"/>
+	</a>
+
+	<div class="bottom">
+		<input type="button" id="readgps" value="GPS" onclick="showGPS();" />
+		<input type="button" id="mapback" value="Back to Tour" onclick="backToTour();" />
+		<a href="uguide.html" target="_blank" style="text-decoration: none;"><input type="button" id="readhelp" value="Help" /></a>
+	</div>
+</div>
+
+<div id="locdesc" style="display: none; height: 99.5vh;">
+	<iframe id="locframe" title="location frame" width="100%" height="100%">
+	</iframe>
+	<a class="topmenu_button" href="#" onclick="toggleLocmenu()">
+		<img class="timage" src="gfx/menu_button.svg" />
+	</a>
+
+	<div id="locdrop" class="menyy dropmenu" style="display: none;">
+	<div class="menyylinks">
+		<a id="locguide" href="#" onclick="toggleLocmenu(); startGuided(0);">Start Guided Tour Here</a>
+		<br>
+		<a id="locgoogle" href="#" target="_blank" onclick="toggleLocmenu();">Launch on Google Maps</a>
+	</div>
+	</div>
+<!--
+	<div class="bottom">
+	<input type="button" id="locback" value="Go Back" onclick="reverseLocation();" />
+	</div>
+-->
+	<a href="#" onclick="reverseLocation();" style="position: absolute; left: 0; top: 0;"><img src="gfx/go_back.svg" style="width: 10vw"/></a>
+</div>
+
+<div id="waypoint" style="display: none">
+	<div class="topnav">
+		<span class="left" id="wpbrg">BRG</span>
+		<span class="mid" id="wprng">RNG</span>
+		<span class="right" id="wphdg">HDG</span>
+	</div>
+
+	<h3 id="wptitle"></h3>
+	<p id="wpinfotext"></p>
+
+	<div style="height: calc(100vh - 4.5rem); width: 100vw; display: none;">
+		<iframe id="wpiframe" title="waypoint frame" width="100%" height="100%"></iframe>
+	</div>
+
+	<div class="bottom">
+		<input type="button" class="leftb" id="wpprev" value="<-" onclick="prevWaypoint();"/>
+		<input type="button" class="midlb" id="wpmap" value="View Map" onclick="activateBriefing();"/>
+		<input type="button" class="midrb blinkmf" id="wpread" value="Read More" onclick="wpReadMore();"/>
+		<input type="button" class="rightb" id="wpnext" value="->" onclick="nextWaypoint();"/>
+	</div>
+</div>
+
+<div id="gps" style="display: none">
+	<h3 id="questhead"></h3>
+	<span id="wpname"></span>
+	<table>
+		<tr>
+			<td id="wplat"></td>
+			<td id="wplon"></td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td id="bearing"></td>
+			<td id="range"></td>
+		</tr>
+		<tr><td>- - -</td><td>- - -</td></tr>
+		<tr><td>CUR POS:</td></tr>
+		<tr>
+			<td id="userlat"></td>
+			<td id="userlon"></td>
+		</tr>
+		<tr>
+			<td id="heading"></td>
+			<td id="speed"></td>
+		</tr>
+	</table>
+	<p id="wptext">
+	</p>
+</div>
+
+<div id="map" style="display: none">
+</div>
+
+<script>
+	main();
+</script>
+
+</body>
+
+</html>
