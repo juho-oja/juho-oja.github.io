@@ -526,7 +526,7 @@ function mapClicked(e) {
 
 	popup_menu.style.display = "none";
 
-// search for waypoints first. If found, activate popup and return
+// search for major locations first. If found, activate popup and return
 	let tc = desc.locs.length;
 	let tlocs = desc.locs;
 	for (let i = 0; i < tc; i++) {
@@ -617,7 +617,9 @@ function activateLocation(select, ret) {
 	waypoint.style.display = "none";
 	locdesc.style.display = "block";
 
-	let twp = quest.waypoints[desc.locs[select].waypoint];
+	let wp = desc.locs[select].waypoint;
+	locguide.setAttribute("onclick", "startGuided(" + wp + ");");
+	let twp = quest.waypoints[wp];
 	locgoogle.href = google_string + twp.lat.toFixed(6) + "%2C" + twp.lon.toFixed(6);
 
 	sessionStorage.setItem("mode","loc");
